@@ -1,6 +1,6 @@
-# DCdetector Minimal Public Release
+# DCdetector Evaluation Pipeline
 
-This folder is a smaller GitHub-ready release that keeps only the main DCdetector pipeline used in the paper.
+This repository provides the code and configs used for the DCdetector-based event-level, event-aware, and counterfactual evaluation pipeline.
 
 Included:
 - preprocessing scripts
@@ -10,7 +10,7 @@ Included:
 - counterfactual evaluation (`v1`, `exact`, `v2`, `v3`)
 - paper figure plotting
 - multi-seed summary script
-- mainline configs for SMAP, MSL, and HAI21.03 only
+- mainline configs for SMAP, MSL, and HAI21.03
 
 Excluded:
 - raw and processed datasets
@@ -38,7 +38,7 @@ The evaluation and training scripts expect the official DCdetector codebase at `
 - score-weighted baseline: `configs/eval/counterfactual_v1_main3.json`
 - robust ablations: `configs/eval/counterfactual_v2.json`, `configs/eval/counterfactual_v3.json`
 
-The public configs in this folder keep the full random-baseline setting:
+The public configs keep the full random-baseline setting:
 
 - `num_random_trials = 20`
 
@@ -54,7 +54,7 @@ The multi-seed summary script is still included, but note the difference:
 - for full-coverage configs, `event_sampling_seed` does not control a stratified event subsample
 - seed sweeps are only meaningful if you intentionally switch back to a sampled event-selection mode
 
-If you want a 50-seed sampled ablation, you can still run it by changing `event_selection_mode` back to a sampled setting and varying `event_sampling_seed`.
+If you want a 50-seed sampled ablation, you can still switch `event_selection_mode` back to a sampled setting and vary `event_sampling_seed`.
 
 PowerShell example:
 
@@ -77,4 +77,4 @@ This release does not ship:
 - `analysis_figures/`
 - `runs/`
 
-You are expected to prepare these locally before running the pipeline.
+These directories must be prepared locally before running the pipeline.
