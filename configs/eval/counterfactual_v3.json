@@ -1,0 +1,48 @@
+{
+  "datasets": [
+    "MSL",
+    "SMAP",
+    "HAI21.03"
+  ],
+  "base_counterfactual_v2_config": "configs/eval/counterfactual_v2.json",
+  "ablations": [
+    {
+      "name": "abs_same_ref",
+      "contribution_method": "score_weighted_abs_deviation_sum",
+      "random_baseline_modes": [
+        "random_variables_same_reference"
+      ],
+      "deletion_method": "train_median_replace"
+    },
+    {
+      "name": "zscore_same_ref",
+      "contribution_method": "score_weighted_zscore_sum",
+      "random_baseline_modes": [
+        "random_variables_same_reference"
+      ],
+      "deletion_method": "train_median_replace"
+    },
+    {
+      "name": "robust_same_ref",
+      "contribution_method": "score_weighted_robust_zscore_sum",
+      "random_baseline_modes": [
+        "random_variables_same_reference"
+      ],
+      "deletion_method": "train_median_replace"
+    },
+    {
+      "name": "robust_dual_random",
+      "contribution_method": "score_weighted_robust_zscore_sum",
+      "random_baseline_modes": [
+        "random_variables_same_reference",
+        "random_variables_random_reference"
+      ],
+      "deletion_method": "train_median_replace"
+    }
+  ],
+  "results_csv": "outputs/tables/results_counterfactual_v3.csv",
+  "comparison_csv": "outputs/tables/counterfactual_v3_comparison.csv",
+  "results_xlsx": "outputs/tables/baseline_event_v2_counterfactual_v3.xlsx",
+  "analysis_dir": "analysis_figures/counterfactual_v3",
+  "save_case_figures": false
+}

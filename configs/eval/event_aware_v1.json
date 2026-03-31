@@ -1,0 +1,27 @@
+{
+  "use_event_aware": true,
+  "dataset_order": [
+    "SMAP",
+    "MSL",
+    "HAI21.03"
+  ],
+  "baseline": {
+    "aggregation": "mean",
+    "smoothing": "none",
+    "smoothing_param": 0,
+    "threshold_method": "best_f1",
+    "threshold_param": null
+  },
+  "event_aware": {
+    "aggregation": "mean",
+    "smoothing": "moving_average",
+    "smoothing_param": 5,
+    "threshold_method": "best_fc1",
+    "threshold_param": 401
+  },
+  "score_root": "outputs/scores",
+  "analysis_dir": "analysis_figures/event_aware_v1",
+  "results_csv": "outputs/tables/results_event_aware.csv",
+  "comparison_csv": "outputs/tables/event_aware_comparison.csv",
+  "results_xlsx": "outputs/tables/baseline_event_aware.xlsx"
+}

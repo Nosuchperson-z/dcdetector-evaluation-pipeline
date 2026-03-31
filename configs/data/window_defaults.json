@@ -1,0 +1,17 @@
+{
+  "SMAP": {
+    "win_size": 105,
+    "train_stride": 1,
+    "test_stride": 1
+  },
+  "MSL": {
+    "win_size": 90,
+    "train_stride": 1,
+    "test_stride": 1
+  },
+  "HAI21.03": {
+    "win_size": 100,
+    "train_stride": 1,
+    "test_stride": 1
+  }
+}

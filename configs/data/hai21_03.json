@@ -1,0 +1,11 @@
+{
+  "dataset": "HAI21.03",
+  "source": "data_raw/hai/hai-21.03",
+  "train_files": ["train1.csv.gz", "train2.csv.gz", "train3.csv.gz"],
+  "test_files": ["test1.csv.gz", "test2.csv.gz", "test3.csv.gz", "test4.csv.gz", "test5.csv.gz"],
+  "time_column": "time",
+  "label_column": "attack",
+  "aux_label_columns": ["attack_P1", "attack_P2", "attack_P3"],
+  "val_ratio": 0.2,
+  "label_type": "point"
+}

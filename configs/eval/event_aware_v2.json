@@ -1,0 +1,54 @@
+{
+  "use_alignment_trim": true,
+  "dataset_order": [
+    "SMAP",
+    "MSL",
+    "HAI21.03"
+  ],
+  "score_root": "outputs/scores",
+  "score_source_overrides": {
+    "SMAP": "outputs/scores_full_coverage",
+    "MSL": "outputs/scores_full_coverage",
+    "HAI21.03": "outputs/scores"
+  },
+  "analysis_dir": "analysis_figures/event_aware_v2",
+  "results_csv": "outputs/tables/results_event_aware_v2.csv",
+  "comparison_csv": "outputs/tables/event_aware_v2_comparison.csv",
+  "results_xlsx": "outputs/tables/baseline_event_aware_v2.xlsx",
+  "threshold_calibration": {
+    "enabled": true,
+    "mode": "prefix_fraction",
+    "fraction": 0.2,
+    "min_points": 1,
+    "evaluate_on_holdout_only": true
+  },
+  "baseline": {
+    "aggregation": "mean",
+    "smoothing": "none",
+    "smoothing_param": 0,
+    "threshold_method": "quantile",
+    "threshold_param": 0.995
+  },
+  "event_aware_v1": {
+    "aggregation": "mean",
+    "smoothing": "moving_average",
+    "smoothing_param": 5,
+    "threshold_method": "quantile",
+    "threshold_param": 0.995
+  },
+  "event_aware_v2": {
+    "aggregation": "mean",
+    "smoothing": "moving_average",
+    "smoothing_param": 3,
+    "gap_merge": true,
+    "gap_size": 8,
+    "min_event_length": 1,
+    "point_threshold_method": "sweep",
+    "point_threshold_steps": 31,
+    "event_threshold_method": "sweep",
+    "event_threshold_steps": 11,
+    "event_score_pooling": "mean",
+    "threshold_objective": "fc1_minus_lambda_delay",
+    "threshold_objective_lambda": 0.15
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "dataset": "MSL",
+  "source": "data_raw/MSL",
+  "train_file": "MSL_train.npy",
+  "test_file": "MSL_test.npy",
+  "label_file": "MSL_test_label.npy",
+  "val_ratio": 0.2,
+  "time_column": null,
+  "label_type": "point"
+}

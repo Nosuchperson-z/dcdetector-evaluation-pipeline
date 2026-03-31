@@ -1,0 +1,42 @@
+{
+  "use_counterfactual": true,
+  "datasets": [
+    "SMAP",
+    "MSL",
+    "HAI21.03"
+  ],
+  "score_source": "mixed_full_coverage_and_legacy",
+  "score_source_overrides": {
+    "SMAP": "outputs/scores_full_coverage",
+    "MSL": "outputs/scores_full_coverage",
+    "HAI21.03": "outputs/scores"
+  },
+  "event_source": "event_aware_v2",
+  "event_config": "configs/eval/event_aware_v2.json",
+  "contribution_method": "tail_score_weighted_abs_deviation_sum",
+  "topk_list": [
+    1,
+    3,
+    5
+  ],
+  "repair_method": "nearest_train_window_replace",
+  "normal_reference_method": "train_mean",
+  "num_random_trials": 20,
+  "save_case_figures": false,
+  "analysis_dir": "analysis_figures/counterfactual_tail_weighted_main3",
+  "results_csv": "outputs/tables/results_counterfactual_tail_weighted_main3.csv",
+  "comparison_csv": "outputs/tables/counterfactual_tail_weighted_main3_comparison.csv",
+  "results_xlsx": "outputs/tables/baseline_event_v2_counterfactual_tail_weighted_main3.xlsx",
+  "event_details_csv": "outputs/tables/counterfactual_tail_weighted_main3_event_details.csv",
+  "event_selection_mode": "all_predicted",
+  "max_events_per_dataset": null,
+  "event_sampling_num_strata": null,
+  "event_sampling_seed": 20260322,
+  "max_event_analysis_length": 256,
+  "candidate_window_stride": 50,
+  "max_reference_candidates": 256,
+  "counterfactual_score_pooling": "mean",
+  "local_score_batch_size": 8,
+  "stability_topk": 3,
+  "trim_to_coverage": true
+}
