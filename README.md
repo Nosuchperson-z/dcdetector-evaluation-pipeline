@@ -12,13 +12,6 @@ Included:
 - multi-seed summary script
 - mainline configs for SMAP, MSL, and HAI21.03
 
-Excluded:
-- raw and processed datasets
-- checkpoints
-- saved scores, tables, figures, and run artifacts
-- auxiliary backbone bridges and third-party backbone-specific scripts
-- manuscript drafts and private notes
-
 ## Expected layout
 
 ```text
